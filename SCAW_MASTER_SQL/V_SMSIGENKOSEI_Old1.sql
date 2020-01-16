@@ -1,0 +1,63 @@
+﻿
+
+
+CREATE view [dbo].[V_SMSIGENKOSEI_Old1] as   
+--with t01 as (SELECT   t1.FCOMPANYCD, trim(t1.FKOJUNHINCD) AS FKOJUNHINCD, t1.FKYOTENCD, t1.FSEZOPTCD, CASE WHEN len(t2.MachineID) > 10 THEN substring(t2.MachineID, 1, 10) ELSE t2.MachineID END AS FSIGENCD, 
+--                         '1990/01/01' AS FVALIDYMD, CASE WHEN t2.ProTime IS NULL THEN '' ELSE t2.ProTime END AS FSTDHOUR, SUBSTRING(OptionID, 1, 1) AS FSAGYOKB, '2999/12/31' FINVALYMD, '' FENTDT, '' FENTPRG, t1.FENTUSR, 
+--                         t1.FUPDTEDT, t1.FUPDTEPRG, t1.FUPDTEUSR
+--FROM            dbo.V1802_SMSIGENKOSEI AS t1 LEFT OUTER JOIN
+--                         rrc_database.dbo.[242_OptionData] AS t2 ON t1.FKOJUNHINCD = t2.PartID COLLATE DATABASE_DEFAULT
+--WHERE t2.PartID IS NOT NULL AND isnull(t2.MachineID, '') != ''),
+--t02 AS
+--    (SELECT
+--	t01.FCOMPANYCD,
+--	t01.FKOJUNHINCD,
+--	t01.FKYOTENCD, 
+--	T01.FSEZOPTCD,
+--	ROW_NUMBER() OVER (PARTITION BY t01.FKOJUNHINCD
+--      ORDER BY T02.FSIGENMEI) AS FKOJUN,
+--	  T02.FSIGENCD,
+--	  T01.FVALIDYMD, 
+--	  T01.FSTDHOUR,
+--	  T01.FSAGYOKB,
+--	  T01.FINVALYMD,
+--	  T01.FENTDT, 
+--	  T01.FENTPRG, 
+--	  T01.FENTUSR,
+--	  T01.FUPDTEDT, 
+--	  T01.FUPDTEPRG,
+--	  T01.FUPDTEUSR
+--FROM  t01 LEFT JOIN
+-- V_SMSIGEN AS t02 ON trim(t01.FSIGENCD) = trim(t02.FSIGENMEI) COLLATE database_default), t03 AS
+--(SELECT      * FROM            t02),
+--t04 AS
+--    (SELECT        t03.FCOMPANYCD, t03.FKOJUNHINCD, t03.FKYOTENCD, t03.FSEZOPTCD, t03.FKOJUN, t03.FSIGENCD, t03.FVALIDYMD, t03.FSTDHOUR, isnull(t05.FSAGYOKB, '') AS FSAGYOKB, t03.FINVALYMD, t03.FENTDT, t03.FENTPRG, 
+--                                t03.FENTUSR, t03.FUPDTEDT, t03.FUPDTEPRG, t03.FUPDTEUSR
+--      FROM            t03 LEFT JOIN
+--                                dbo.[1802_Department] AS t04 ON t03.FSIGENCD = t04.OptionID COLLATE database_default LEFT JOIN
+--                                dbo.V1965_SMSAGYOKB AS t05 ON t04.FSAGYOKBMEI = t05.FSAGYOKBMEI
+--      WHERE        t03.FSIGENCD IS NOT NULL), t05 AS
+--    (SELECT        T04.*
+--      FROM            T04 INNER JOIN
+--                                [scaw_db].[dbo].V_SMHIN T05 ON T04.FKOJUNHINCD = T05.FHINCD COLLATE DATABASE_DEFAULT AND T05.FHINTYP = 'M')
+--    SELECT  
+
+--	t05.FCOMPANYCD,
+--	t05.FKOJUNHINCD,
+--	t05.FKYOTENCD,
+--	t05.FSEZOPTCD,
+	
+--	format(row_number() over(partition by FKOJUNHINCD order by FKOJUNHINCD),'00' )+'0' AS FKOJUN,
+--	t05.FSIGENCD,
+--	t05.FVALIDYMD,
+--	t05.FSTDHOUR,
+--	t05.FSAGYOKB, 
+--	t05.FINVALYMD,
+--	t05.FENTDT, 
+--	t05.FENTPRG, 
+--    t05.FENTUSR,
+--	t05.FUPDTEDT,
+--	t05.FUPDTEPRG,
+--	t05.FUPDTEUSR
+-- FROM  t05
+    SELECT GETDATE() TT

@@ -1,0 +1,36 @@
+﻿CREATE VIEW [dbo].[V2151_SMBUSHO_C_Customer]
+AS
+SELECT  'RRC' AS FCOMPANYCD
+		, TRIM(Customer_Code) AS FBUSHOCD
+		, 'en' AS FLNGKB
+		, '1900/01/01' AS FVALIDYMD
+		, '2999/12/31' AS FINVALYMD
+		, 'C' AS FBUSHOTYP
+		, 1 AS FKOKYAKUFLG
+		, 0 AS FSIREFLG
+		, ISNULL(TRIM(Customer_ShortName), '*') AS FBUSHORMEI
+		, dbo.fChuyenCoDauThanhKhongDau(ISNULL(TRIM(Customer_FullName), N'')) AS FBUSHOMEI
+		, '*' AS FBUSHOKANAMEI
+		, FKUNICD
+		, '' AS FAREACD
+		, 1 AS FSHOSYAKB
+		, '' AS FGYOSHUKB
+		, '02' AS FKAZEIKB
+		, Currency AS FTUKACD
+		, '' AS FSHUKKACOLUMNMEI
+		, '' AS FSHUKKAHYOJINAIYO
+		, '' AS FTAXCODE
+		, '' AS FYUBINNO
+		, dbo.fChuyenCoDauThanhKhongDau(ISNULL(TRIM(Address), N'')) AS FJUSHO1
+		, '' AS FJUSHO2
+		, '' AS FJUSHO3
+		, '' AS FTELNO
+		, '00012' AS FTANTOCD
+		, '' AS FBIKO
+		, TRIM(Fax) AS FFAXNO
+		, '' AS FFAXNO2
+		, '' AS FFAXNO3
+		, TRIM(ISNULL(Mail, '')) AS FMAIL1
+		, '' AS FMAIL2
+		, '' AS FMAIL3
+FROM    dbo.[2151_Customer] AS T1

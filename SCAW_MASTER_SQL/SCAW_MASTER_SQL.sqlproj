@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>SCAW_MASTER_SQL</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{c670df6b-9479-4fa8-a0e0-1e5a2c8c8151}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>SCAW_MASTER_SQL</RootNamespace>
+    <AssemblyName>SCAW_MASTER_SQL</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="1644_SMSHONINKENSHA.sql" />
+    <Build Include="V_SMHIN.sql" />
+    <Build Include="V_SMHINKOSEI.sql" />
+    <Build Include="V_SMHINTEHAI.sql" />
+    <Build Include="V_SMSIGEN.sql" />
+    <Build Include="V_SMSIGENBUNRUI.sql" />
+    <Build Include="V_SMSIGENKOSEI.sql" />
+    <Build Include="V_SMSIGENKOSEI_Old.sql" />
+    <Build Include="V_SMSIGENKOSEI_Old1.sql" />
+    <Build Include="V1644_SMSHONINKENSHA.sql" />
+    <Build Include="V1644_SMUSER.sql" />
+    <Build Include="V1644_SMUSERMEI.sql" />
+    <Build Include="V1802_SMSIGENKOSEI.sql" />
+    <Build Include="V1965_SMAREA.sql" />
+    <Build Include="V1965_SMHINAREA.sql" />
+    <Build Include="V1965_SMRIYU.sql" />
+    <Build Include="V1965_SMSAGYO.sql" />
+    <Build Include="V1965_SMSAGYOKB.sql" />
+    <Build Include="V2151_Group_SMBUSHO.sql" />
+    <Build Include="V2151_SMBUSHO.sql" />
+    <Build Include="V2151_SMBUSHO_A.sql" />
+    <Build Include="V2151_SMBUSHO_C_Customer.sql" />
+    <Build Include="V2151_SMBUSHO_C_Supplier.sql" />
+    <Build Include="V2151_SMBUSHO_Import.sql" />
+    <Build Include="V2151_SMBUSHO_M.sql" />
+    <Build Include="V2151_SMBUSHO_P.sql" />
+    <Build Include="V2151_SMKOJUN.sql" />
+    <Build Include="V2151_SMKOJUN_Temp.sql" />
+    <Build Include="V2151_SMKUNI.sql" />
+    <Build Include="V2151_SMRATE.sql" />
+    <Build Include="V2151_SMRATE_Import.sql" />
+    <Build Include="V2151_SMTANKADTL.sql" />
+    <Build Include="V2151_SMTANKAHD.sql" />
+    <Build Include="V2151_SMTANKAHD_Root.sql" />
+    <Build Include="V2151_SMTUKA.sql" />
+    <Build Include="V2151_SMZUMEN.sql" />
+  </ItemGroup>
+</Project>

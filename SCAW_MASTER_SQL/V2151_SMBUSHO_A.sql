@@ -1,0 +1,60 @@
+﻿CREATE VIEW [dbo].[V2151_SMBUSHO_A]
+AS
+
+	SELECT 'RRC' AS FCOMPANYCD
+		,Dept_Code AS FBUSHOCD
+		,'en' AS FLNGKB
+		,'1900/01/01' AS FVALIDYMD
+		,'2999/12/31' AS FINVALYMD
+		
+		,'A' AS FBUSHOTYP
+		,Dept_ShortName AS FBUSHORMEI
+		,Dept_FullName AS FBUSHOMEI
+		,'*' AS FBUSHOKANAMEI
+		,'' AS FJOIBUSHOCD
+		
+		,FSHOZOKUKB
+		,'' AS FYUBINNO
+		,'' AS FJUSHO1
+		,'' AS FJUSHO2
+		,'' AS FJUSHO3
+		
+		,'' AS FTELNO
+		,'' AS FFAXNO
+		,'' AS FFAXNO2
+		,'' AS FFAXNO3
+		,'' AS FMAIL1
+		
+		,'' AS FMAIL2
+		,'' AS FMAIL3
+	FROM [scaw_db].[dbo].[2151_Department] AS T1
+
+	UNION ALL
+
+	SELECT 'RRC' AS FCOMPANYCD
+		, Group_Code AS FBUSHOCD
+		,'en' AS FLNGKB
+		,'1900/01/01' AS FVALIDYMD
+		,'2999/12/31' AS FINVALYMD
+
+		,'A' AS FBUSHOTYP
+		,Group_ShortName AS FBUSHORMEI
+		,Group_FullName AS FBUSHOMEI
+		,'*' AS FBUSHOKANAMEI
+		,FJOIBUSHOCD
+
+		,FSHOZOKUKB
+		,'' AS FYUBINNO
+		,'' AS FJUSHO1
+		,'' AS FJUSHO2
+		,'' AS FJUSHO3
+		
+		,'' AS FTELNO
+		,'' AS FFAXNO
+		,'' AS FFAXNO2
+		,'' AS FFAXNO3
+		,'' AS FMAIL1
+		
+		,'' AS FMAIL2
+		,'' AS FMAIL3
+	FROM [scaw_db].[dbo].[2151_Group]

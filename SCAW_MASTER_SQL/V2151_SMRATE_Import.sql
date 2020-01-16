@@ -1,0 +1,10 @@
+﻿CREATE VIEW [dbo].[V2151_SMRATE_Import]
+AS
+SELECT '' AS Comment
+      ,[FFROMTUKACD]
+      ,[FDATE]
+      ,[FTTSRATE]
+      ,[FTTBRATE]
+	  ,CASE WHEN DAY(CONVERT(Date,[FDATE])) = 1 THEN CAST([FSHANAIRATE] AS nvarchar(50)) ELSE '' END AS [FSHANAIRATE]
+FROM [scaw_db].[dbo].[V2151_SMRATE]
+WHERE FORMAT(CONVERT(Date,[FDATE]),'yyyyMM') != FORMAT(GETDATE(),'yyyyMM')

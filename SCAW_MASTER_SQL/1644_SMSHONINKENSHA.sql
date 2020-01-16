@@ -1,0 +1,23 @@
+﻿/****** Script for SelectTopNRows command from SSMS  ******/
+create View [1644_SMSHONINKENSHA] as (
+SELECT  [FCOMPANYCD]
+      ,[FSHONINKB]
+      ,[FKIANBUSHOCD]
+      ,[FSHONINBUSHOCD]
+      ,[FSHONINSHACD]
+      ,format([FVALIDYMD],'yyyy/MM/dd') as [FVALIDYMD]
+      ,[FSHONINMINGAK]
+      ,[FSHONINMAXGAK]
+      ,[FDAIRICD]
+      ,[FDAIRICD2]
+      ,[FDAIRICD3]
+      ,[FDAIRICD4]
+      ,[FDAIRICD5] 
+      , format([FINVALYMD],'yyyy/MM/dd') as [FINVALYMD]
+      ,'' as [FENTDT]
+      ,[FENTPRG]
+      ,[FENTUSR]
+      ,'' as [FUPDTEDT]
+      ,[FUPDTEPRG]
+      ,[FUPDTEUSR]
+  FROM [scaw_db].[dbo].[SMSHONINKENSHA])
